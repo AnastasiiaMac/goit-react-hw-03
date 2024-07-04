@@ -13,7 +13,6 @@ const ValidationSchema = Yup.object().shape({
     .required("Required"),
 });
 
-const addId = nanoid();
 const nameId = nanoid();
 const numberId = nanoid();
 const ContactForm = ({ onAdd }) => {
@@ -21,7 +20,7 @@ const ContactForm = ({ onAdd }) => {
     actions.resetForm();
 
     onAdd({
-      id: addId,
+      id: nanoid(),
       name: values.name,
       number: values.number,
     });
